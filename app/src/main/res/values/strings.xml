@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bulls&amp;Cows</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="button">Check my fortune</string>
+    <string name="tooSmallNumber">Not enough characters</string>
+</resources>
