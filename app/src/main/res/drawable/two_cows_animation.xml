@@ -1,0 +1,15 @@
+<animation-list
+    android:id="@+id/selected"
+    android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/two_cows_00" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_01" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_02" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_03" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_04" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_05" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_00" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_01" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_02" android:duration="200" />
+    <item android:drawable="@drawable/two_cows_03" android:duration="200" />
+</animation-list>

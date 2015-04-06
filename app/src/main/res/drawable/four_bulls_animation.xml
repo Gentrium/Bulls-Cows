@@ -1,0 +1,14 @@
+<animation-list
+    android:id="@+id/selected"
+    android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/four_bulls_00" android:duration="200" />
+    <item android:drawable="@drawable/four_bulls_01" android:duration="210" />
+    <item android:drawable="@drawable/four_bulls_02" android:duration="210" />
+    <item android:drawable="@drawable/four_bulls_00" android:duration="210" />
+    <item android:drawable="@drawable/four_bulls_01" android:duration="210" />
+    <item android:drawable="@drawable/four_bulls_02" android:duration="210" />
+    <item android:drawable="@drawable/four_bulls_00" android:duration="200" />
+    <item android:drawable="@drawable/four_bulls_01" android:duration="210" />
+    <item android:drawable="@drawable/four_bulls_02" android:duration="210" />
+</animation-list>

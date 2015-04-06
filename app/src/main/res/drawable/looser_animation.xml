@@ -1,0 +1,53 @@
+<animation-list
+    android:id="@+id/selected"
+    android:oneshot="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/looser_00" android:duration="100" />
+    <item android:drawable="@drawable/looser_01" android:duration="100" />
+    <item android:drawable="@drawable/looser_02" android:duration="100" />
+    <item android:drawable="@drawable/looser_03" android:duration="100" />
+    <item android:drawable="@drawable/looser_04" android:duration="100" />
+    <item android:drawable="@drawable/looser_05" android:duration="100" />
+    <item android:drawable="@drawable/looser_06" android:duration="100" />
+    <item android:drawable="@drawable/looser_07" android:duration="100" />
+    <item android:drawable="@drawable/looser_08" android:duration="100" />
+    <item android:drawable="@drawable/looser_09" android:duration="100" />
+    <item android:drawable="@drawable/looser_10" android:duration="100" />
+    <item android:drawable="@drawable/looser_11" android:duration="100" />
+    <item android:drawable="@drawable/looser_12" android:duration="100" />
+    <item android:drawable="@drawable/looser_13" android:duration="100" />
+    <item android:drawable="@drawable/looser_14" android:duration="100" />
+    <item android:drawable="@drawable/looser_15" android:duration="100" />
+    <item android:drawable="@drawable/looser_16" android:duration="100" />
+    <item android:drawable="@drawable/looser_17" android:duration="100" />
+    <item android:drawable="@drawable/looser_18" android:duration="100" />
+    <item android:drawable="@drawable/looser_19" android:duration="100" />
+    <item android:drawable="@drawable/looser_20" android:duration="100" />
+    <item android:drawable="@drawable/looser_21" android:duration="100" />
+    <item android:drawable="@drawable/looser_22" android:duration="100" />
+    <item android:drawable="@drawable/looser_23" android:duration="100" />
+    <item android:drawable="@drawable/looser_24" android:duration="100" />
+    <item android:drawable="@drawable/looser_25" android:duration="100" />
+    <item android:drawable="@drawable/looser_26" android:duration="100" />
+    <item android:drawable="@drawable/looser_27" android:duration="100" />
+    <item android:drawable="@drawable/looser_28" android:duration="100" />
+    <item android:drawable="@drawable/looser_29" android:duration="100" />
+    <item android:drawable="@drawable/looser_30" android:duration="100" />
+    <item android:drawable="@drawable/looser_31" android:duration="100" />
+    <item android:drawable="@drawable/looser_32" android:duration="100" />
+    <item android:drawable="@drawable/looser_33" android:duration="100" />
+    <item android:drawable="@drawable/looser_34" android:duration="100" />
+    <item android:drawable="@drawable/looser_35" android:duration="100" />
+    <item android:drawable="@drawable/looser_36" android:duration="100" />
+    <item android:drawable="@drawable/looser_37" android:duration="100" />
+    <item android:drawable="@drawable/looser_38" android:duration="100" />
+    <item android:drawable="@drawable/looser_39" android:duration="100" />
+    <item android:drawable="@drawable/looser_40" android:duration="100" />
+    <item android:drawable="@drawable/looser_41" android:duration="100" />
+    <item android:drawable="@drawable/looser_42" android:duration="100" />
+    <item android:drawable="@drawable/looser_43" android:duration="100" />
+    <item android:drawable="@drawable/looser_44" android:duration="100" />
+    <item android:drawable="@drawable/looser_45" android:duration="100" />
+    <item android:drawable="@drawable/looser_46" android:duration="100" />
+    <item android:drawable="@drawable/looser_47" android:duration="100" />
+</animation-list>

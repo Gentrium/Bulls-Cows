@@ -1,0 +1,13 @@
+<animation-list
+    android:id="@+id/selected"
+    android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/four_cows_01" android:duration="210" />
+    <item android:drawable="@drawable/four_cows_02" android:duration="210" />
+    <item android:drawable="@drawable/four_cows_03" android:duration="210" />
+    <item android:drawable="@drawable/four_cows_04" android:duration="210" />
+    <item android:drawable="@drawable/four_cows_01" android:duration="200" />
+    <item android:drawable="@drawable/four_cows_02" android:duration="210" />
+    <item android:drawable="@drawable/four_cows_03" android:duration="210" />
+    <item android:drawable="@drawable/four_cows_04" android:duration="210" />
+</animation-list>
