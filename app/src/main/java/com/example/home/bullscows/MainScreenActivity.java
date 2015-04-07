@@ -43,26 +43,10 @@ public class MainScreenActivity extends ActionBarActivity implements View.OnClic
         numbers = (EditText) findViewById(R.id.numbers);
         numbers.setFocusable(false);
         numbers.setCursorVisible(false);
-        numbers.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });
 
         initializeButtons();
         Button btnCheck = (Button) findViewById(R.id.btn_check);
         btnCheck.setOnClickListener(MainScreenActivity.this);
-        Intent intent = new Intent(this, BackgroundMusic.class);
-        startService(intent);
     }
 
     public void onClick(View v) {
@@ -223,10 +207,19 @@ public class MainScreenActivity extends ActionBarActivity implements View.OnClic
         btnZero.setEnabled(true);
     }
 
+//    Stop background music
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onStop() {
+        super.onStop();
         Intent intent = new Intent(this, BackgroundMusic.class);
         stopService(intent);
     }
+//    Start background music
+    @Override
+    protected void onStart() {
+        Intent intent = new Intent(this, BackgroundMusic.class);
+        startService(intent);
+        super.onStart();
+    }
+
 }

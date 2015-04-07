@@ -48,7 +48,7 @@ public class AnimationFragment extends DialogFragment {
             animationFrame.setBackgroundResource(R.drawable.three_cows_animation);
         }else if(bulls == 4){
             animationFrame.setBackgroundResource(R.drawable.four_bulls_animation);
-        }else if(cows + bulls == 4) {
+        }else if(cows + bulls == 4  && bulls != 4) {
             animationFrame.setBackgroundResource(R.drawable.four_cows_animation);
         }
 
