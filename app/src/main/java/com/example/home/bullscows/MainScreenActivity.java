@@ -2,11 +2,10 @@ package com.example.home.bullscows;
 
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +19,11 @@ import java.util.TimerTask;
 
 public class MainScreenActivity extends ActionBarActivity implements View.OnClickListener {
 
+    private static boolean soundEnable;
+    private static final String SOUND_KEY = "sound";
     Generator g = new Generator();
     EditText numbers;
+    SharedPreferences preferences;
 
     Button btnZero;
     Button btnOne;
@@ -47,10 +49,27 @@ public class MainScreenActivity extends ActionBarActivity implements View.OnClic
         initializeButtons();
         Button btnCheck = (Button) findViewById(R.id.btn_check);
         btnCheck.setOnClickListener(MainScreenActivity.this);
+        preferences = getPreferences(MODE_PRIVATE);
+        soundEnable = preferences.getBoolean(SOUND_KEY,true);
     }
 
     public void onClick(View v) {
 
+        if(numbers.getText().length() == 4) {
+            if (v.getId() == R.id.btnOne ||
+                    v.getId() == R.id.btnTwo ||
+                    v.getId() == R.id.btnThree ||
+                    v.getId() == R.id.btnFour ||
+                    v.getId() == R.id.btnFive ||
+                    v.getId() == R.id.btnSix ||
+                    v.getId() == R.id.btnSeven ||
+                    v.getId() == R.id.btnEight ||
+                    v.getId() == R.id.btnNine ||
+                    v.getId() == R.id.btnZero) {
+                Toast.makeText(MainScreenActivity.this, R.string.too_much_numbers, Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
 
         switch (v.getId()) {
             case R.id.btnOne:
@@ -94,16 +113,12 @@ public class MainScreenActivity extends ActionBarActivity implements View.OnClic
                     Toast.makeText(MainScreenActivity.this, R.string.zeroFirstError, Toast.LENGTH_SHORT).show();
                 } else {
                     numbers.append("0");
+                    if(numbers.getText().length() != 4)
                     btnZero.setEnabled(false);
                 }
                 break;
             case R.id.btnDelete:
-                if (numbers.getText().length() > 1) {
-                    numbers.setText(numbers.getText().subSequence(0, numbers.getText().length() - 1));
-                } else {
-                    numbers.setText("");
-                    btnZero.setEnabled(false);
-                }
+                deletingNumber();
                 break;
             case R.id.btn_check:
                 int bulls = 0;
@@ -164,7 +179,15 @@ public class MainScreenActivity extends ActionBarActivity implements View.OnClic
         if (id == R.id.action_settings) {
             return true;
         }
-
+        if(id == R.id.sound){
+            if(soundEnable){
+                soundEnable = false;
+                stopMusic();
+            }else{
+                soundEnable = true;
+                startMusic();
+            }
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -210,16 +233,70 @@ public class MainScreenActivity extends ActionBarActivity implements View.OnClic
 //    Stop background music
     @Override
     protected void onStop() {
+        stopMusic();
+        preferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(SOUND_KEY,soundEnable).commit();
         super.onStop();
-        Intent intent = new Intent(this, BackgroundMusic.class);
-        stopService(intent);
     }
 //    Start background music
     @Override
     protected void onStart() {
+        if(soundEnable)
+            startMusic();
+        super.onStart();
+    }
+    private void startMusic(){
         Intent intent = new Intent(this, BackgroundMusic.class);
         startService(intent);
-        super.onStart();
+    }
+
+    private  void stopMusic(){
+        Intent intent = new Intent(this, BackgroundMusic.class);
+        stopService(intent);
+    }
+
+    private void deletingNumber(){
+        if(numbers.getText().length() != 0){
+        switch (numbers.getText().charAt(numbers.getText().length()-1)){
+            case '1':
+                btnOne.setEnabled(true);
+                break;
+            case '2':
+                btnTwo.setEnabled(true);
+                break;
+            case '3':
+                btnThree.setEnabled(true);
+                break;
+            case '4':
+                btnFour.setEnabled(true);
+                break;
+            case '5':
+                btnFive.setEnabled(true);
+                break;
+            case '6':
+                btnSix.setEnabled(true);
+                break;
+            case '7':
+                btnSeven.setEnabled(true);
+                break;
+            case '8':
+                btnEight.setEnabled(true);
+                break;
+            case '9':
+                btnNine.setEnabled(true);
+                break;
+            case '0':
+                btnZero.setEnabled(true);
+                break;
+        }
+        }
+        if (numbers.getText().length() > 1) {
+            numbers.setText(numbers.getText().subSequence(0, numbers.getText().length() - 1));
+        } else {
+            numbers.setText("");
+        }
+
     }
 
 }

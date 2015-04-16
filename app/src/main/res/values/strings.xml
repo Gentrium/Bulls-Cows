@@ -17,4 +17,6 @@
     <string name="zero">0</string>
     <string name="delete">Delete</string>
     <string name="zeroFirstError">Zero cannot be the first number</string>
+    <string name="sound_string">Music On/Off</string>
+    <string name="too_much_numbers">Too much numbers</string>
 </resources>
